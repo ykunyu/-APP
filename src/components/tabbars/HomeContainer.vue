@@ -47,7 +47,7 @@
         },
         methods:{
             getSwiper(){
-                this.$http.get("http://www.baidu.com").then(res=>{
+                this.$http.get("接口地址").then(res=>{
                     if (res.body.status===0){
                         this.datalist=res.body.message
                     } else {

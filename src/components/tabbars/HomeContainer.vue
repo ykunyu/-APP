@@ -1,4 +1,4 @@
-<template>
+﻿<template>
     <div>
         <mt-swipe :auto="4000">
             <mt-swipe-item>1</mt-swipe-item>
@@ -47,7 +47,7 @@
         },
         methods:{
             getSwiper(){
-                this.$http.get("http://vue.studyit.io/api/getlunbo").then(res=>{
+                this.$http.get("http://www.baidu.com").then(res=>{
                     if (res.body.status===0){
                         this.datalist=res.body.message
                     } else {

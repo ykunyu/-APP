@@ -1,19 +1,18 @@
 ﻿<template>
     <div>
         <mt-swipe :auto="4000">
-            <mt-swipe-item>1</mt-swipe-item>
-            <!--<mt-swipe-item v-for="item in datalist" :key="item.url">
-                <img :src="item.img" alt="">
-            </mt-swipe-item>-->
-            <mt-swipe-item>2</mt-swipe-item>
-            <mt-swipe-item>3</mt-swipe-item>
+            <mt-swipe-item v-for="item in datalist">
+                <img :src="item.imgUrl">
+            </mt-swipe-item>
         </mt-swipe>
 
-
         <ul class="mui-table-view mui-grid-view mui-grid-9">
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <router-link to="/home/newslist">
                 <img src="../../images/menu1.png" alt="">
-                <div class="mui-media-body">新闻资讯</div></a></li>
+                <div class="mui-media-body">新闻资讯</div>
+                </router-link>
+            </li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
                 <img src="../../images/menu2.png" alt="">
                 <div class="mui-media-body">图片分享</div></a></li>
@@ -35,7 +34,8 @@
 </template>
 
 <script>
-    /*import {Toast} from 'mint-ui'
+    import {Toast} from 'mint-ui'
+    require('../../../SimulationAPI/Swipter.js');
     export default {
         data(){
             return{
@@ -47,16 +47,18 @@
         },
         methods:{
             getSwiper(){
-                this.$http.get("接口地址").then(res=>{
+                this.$http.get("api/getlunbo").then(res=>{
+
                     if (res.body.status===0){
-                        this.datalist=res.body.message
-                    } else {
-                        Toast("失败了");
+                        this.datalist=res.body.datalist
+                    }else {
+                        Toast("获取图片失败！");
                     }
+
                 })
             }
         }
-    }*/
+    }
 </script>
 
 <style lang="scss" scoped>

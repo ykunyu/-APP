@@ -12,7 +12,8 @@ module.exports={
         /*--open --port 3000 --contentBase src --hot*/
         open:true,
         port:3000,
-        hot:true
+        hot:true,
+        host:'192.168.1.160'
     },
     plugins:[
         new webpack.HotModuleReplacementPlugin(),
@@ -31,7 +32,6 @@ module.exports={
             { test:/\.(eot|ttf|woff|woff2|svg)$/, loader: 'url-loader'},
             { test:/\.js$/, loader: 'babel-loader',exclude:/node_modules/},
             { test:/\.vue$/, loader: 'vue-loader'}
-
         ]
     },
     resolve:{

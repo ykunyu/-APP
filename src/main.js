@@ -15,6 +15,8 @@ import router from './router.js'
 
 import VueResource from 'vue-resource'
 Vue.use(VueResource);
+Vue.http.options.root = 'http://vue.studyit.io';
+
 
 var vm=new Vue({
     el:'#app',

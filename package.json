@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev2": "webpack-dev-server  --mode development --open --port 3000 --contentBase src --hot",
+    "dev2": "webpack-dev-server  --mode development --open --port 3000 --contentBase src --hot --host 192.168.1.160",
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
   },
